@@ -15,8 +15,8 @@ file tex => [org, pandoc_tex_header] do
 end
 
 file pdf => [org, pandoc_tex_header] do
-  sh "pandoc #{org} --latex-engine=xelatex" +
-     " -H #{pandoc_tex_header} -o #{pdf}"
+  sh "pandoc #{org} --pdf-engine=xelatex" +
+     " -o #{pdf}"
 end
 
 task :default => [pdf]
